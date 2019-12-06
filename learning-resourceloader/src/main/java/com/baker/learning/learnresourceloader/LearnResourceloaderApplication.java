@@ -1,13 +1,13 @@
-package com.baker.learning.learningresourceloader;
+package com.baker.learning.learnresourceloader;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LearningResourceloaderApplication {
+public class LearnResourceloaderApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LearningResourceloaderApplication.class, args);
+        SpringApplication.run(LearnResourceloaderApplication.class, args);
     }
 
 }

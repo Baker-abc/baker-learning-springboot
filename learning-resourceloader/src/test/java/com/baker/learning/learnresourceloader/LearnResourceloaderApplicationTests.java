@@ -1,10 +1,10 @@
-package com.baker.learning.learningresourceloader;
+package com.baker.learning.learnresourceloader;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LearningResourceloaderApplicationTests {
+class LearnResourceloaderApplicationTests {
 
     @Test
     void contextLoads() {
