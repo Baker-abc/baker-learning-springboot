@@ -1,4 +1,4 @@
-package com.baker.learning.learningresourceloader.demo;
+package com.baker.learning.learnresourceloader.demo;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
