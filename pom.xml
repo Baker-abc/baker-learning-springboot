@@ -11,6 +11,9 @@
 
     <modules>
         <module>learn-springretry</module>
+        <module>learn-springaop</module>
+        <module>learn-resourceloader</module>
+        <module>learn-globalexception</module>
     </modules>
 
     <parent>
