@@ -8,5 +8,6 @@
 * [spring global exception](https://github.com/Baker-abc/baker-learning-springboot/tree/master/learn-globalexception) MVC全局异常捕获处理。
 * [spring custom annotation](https://github.com/Baker-abc/baker-learning-springboot/tree/master/learn-custom-annotation) 自定义注解
 * [spring condition dependsOn](https://github.com/Baker-abc/baker-learning-springboot/tree/master/learn-springcondition) 条件加载、依赖注入
+* [spring web socket](https://github.com/Baker-abc/baker-learning-springboot/tree/master/learn-websocket) spring web-socket
 
 
