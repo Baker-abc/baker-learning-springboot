@@ -15,6 +15,7 @@
         <module>learn-resourceloader</module>
         <module>learn-globalexception</module>
         <module>learn-custom-annotation</module>
+        <module>learn-websocket</module>
     </modules>
 
     <parent>
