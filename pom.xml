@@ -16,6 +16,7 @@
         <module>learn-globalexception</module>
         <module>learn-custom-annotation</module>
         <module>learn-websocket</module>
+        <module>learn-spring-security</module>
     </modules>
 
     <parent>
