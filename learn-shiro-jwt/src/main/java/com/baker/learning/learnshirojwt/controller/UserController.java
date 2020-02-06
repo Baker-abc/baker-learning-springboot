@@ -1,5 +1,6 @@
 package com.baker.learning.learnshirojwt.controller;
 
+import com.baker.learning.learnshirojwt.constant.RedirectConstants;
 import com.baker.learning.learnshirojwt.exception.UnauthorizedException;
 import com.baker.learning.learnshirojwt.model.User;
 import com.baker.learning.learnshirojwt.model.req.RespVO;
@@ -85,7 +86,7 @@ public class UserController {
         return new RespVO(200, "You are visiting permission require edit,view", null);
     }
 
-    @RequestMapping(path = "/401")
+    @RequestMapping(path = RedirectConstants.ROUTER_MAPPING_401)
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public RespVO unauthorized() {
         return new RespVO(401, "Unauthorized", null);

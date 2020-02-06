@@ -1,5 +1,6 @@
 package com.baker.learning.learnshirojwt.aspect.shiro;
 
+import com.baker.learning.learnshirojwt.constant.RedirectConstants;
 import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
 import org.apache.shiro.mgt.DefaultSubjectDAO;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
@@ -41,21 +42,34 @@ public class ShiroConfig {
 
         // 添加自己的过滤器并且取名为jwt
         Map<String, Filter> filterMap = new HashMap<>();
-        filterMap.put("jwt", new JWTFilter());
+        filterMap.put(JWTFilter.JWT_FILTER_NAME, new JWTFilter());
         factoryBean.setFilters(filterMap);
 
         factoryBean.setSecurityManager(securityManager);
-        factoryBean.setUnauthorizedUrl("/401");
+        factoryBean.setUnauthorizedUrl(RedirectConstants.ROUTER_MAPPING_401);
 
         /*
          * 自定义url规则
-         * http://shiro.apache.org/web.html#urls-
+         * http://shiro.apache.org/web.html
          */
         Map<String, String> filterRuleMap = new HashMap<>();
         // 所有请求通过我们自己的JWT Filter
-        filterRuleMap.put("/**", "jwt");
-        // 访问401和404页面不通过我们的Filter
-        filterRuleMap.put("/401", "anon");
+        filterRuleMap.put("/**", JWTFilter.JWT_FILTER_NAME);
+        /**
+         * anon	                org.apache.shiro.web.filter.authc.AnonymousFilter                   排除校验权限
+         * authc	            org.apache.shiro.web.filter.authc.FormAuthenticationFilter
+         * authcBasic	        org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter
+         * logout	            org.apache.shiro.web.filter.authc.LogoutFilter
+         * noSessionCreation	org.apache.shiro.web.filter.session.NoSessionCreationFilter
+         * perms	            org.apache.shiro.web.filter.authz.PermissionsAuthorizationFilter
+         * port	                org.apache.shiro.web.filter.authz.PortFilter
+         * rest	                org.apache.shiro.web.filter.authz.HttpMethodPermissionFilter
+         * roles	            org.apache.shiro.web.filter.authz.RolesAuthorizationFilter
+         * ssl	                org.apache.shiro.web.filter.authz.SslFilter
+         * user	                org.apache.shiro.web.filter.authc.UserFilter
+         */
+        // 访问401页面不通过我们的Filter
+        filterRuleMap.put(RedirectConstants.ROUTER_MAPPING_401, "anon");
         factoryBean.setFilterChainDefinitionMap(filterRuleMap);
         return factoryBean;
     }

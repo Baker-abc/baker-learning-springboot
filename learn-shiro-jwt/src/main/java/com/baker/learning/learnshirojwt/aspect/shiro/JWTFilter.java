@@ -1,5 +1,6 @@
 package com.baker.learning.learnshirojwt.aspect.shiro;
 
+import com.baker.learning.learnshirojwt.constant.RedirectConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter;
 import org.springframework.http.HttpStatus;
@@ -14,15 +15,18 @@ import java.io.IOException;
 @Slf4j
 public class JWTFilter extends BasicHttpAuthenticationFilter {
 
+    public static final String JWT_FILTER_NAME = "jwt";
+    private static final String HEADER_TOKEN_KEY = "token";
+
     /**
-     * step3
+     *
      * 判断用户是否想要登入。
      * 检测header里面是否包含Authorization字段即可
      */
     @Override
     protected boolean isLoginAttempt(ServletRequest request, ServletResponse response) {
         HttpServletRequest req = (HttpServletRequest) request;
-        String authorization = req.getHeader("Authorization");
+        String authorization = req.getHeader(HEADER_TOKEN_KEY);
         return authorization != null;
     }
 
@@ -32,7 +36,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
     @Override
     protected boolean executeLogin(ServletRequest request, ServletResponse response) throws Exception {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        String authorization = httpServletRequest.getHeader("Authorization");
+        String authorization = httpServletRequest.getHeader(HEADER_TOKEN_KEY);
 
         JWTToken token = new JWTToken(authorization);
         // 提交给realm进行登入，如果错误他会抛出异常并被捕获
@@ -43,6 +47,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
 
     /**
      * step2
+     *
      * 这里我们详细说明下为什么最终返回的都是true，即允许访问
      * 例如我们提供一个地址 GET /article
      * 登入用户和游客看到的内容是不同的
@@ -64,7 +69,8 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
     }
 
     /**
-     * 对跨域提供支持  step1
+     * step1
+     * 对跨域提供支持
      */
     @Override
     protected boolean preHandle(ServletRequest request, ServletResponse response) throws Exception {
@@ -87,7 +93,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
     private void response401(ServletRequest req, ServletResponse resp) {
         try {
             HttpServletResponse httpServletResponse = (HttpServletResponse) resp;
-            httpServletResponse.sendRedirect("/401");
+            httpServletResponse.sendRedirect(RedirectConstants.ROUTER_MAPPING_401);
         } catch (IOException e) {
             log.error(e.getMessage());
         }
