@@ -17,6 +17,7 @@
         <module>learn-custom-annotation</module>
         <module>learn-websocket</module>
         <module>learn-spring-security</module>
+        <module>learn-shiro-jwt</module>
     </modules>
 
     <parent>
