@@ -25,7 +25,7 @@ public class UserService {
         criteria.andNameEqualTo(name);
         List<User> userList = userMapper.selectByExample(example);
         if (CollectionUtils.isEmpty(userList)) {
-            throw new RuntimeException("用户不存在");
+            return null;
         }
         return userList.get(0);
     }
