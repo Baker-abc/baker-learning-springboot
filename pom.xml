@@ -18,6 +18,7 @@
         <module>learn-websocket</module>
         <module>learn-spring-security</module>
         <module>learn-shiro-jwt</module>
+        <module>learn-redis-api-idempotency</module>
     </modules>
 
     <parent>
