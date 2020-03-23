@@ -19,6 +19,7 @@
         <module>learn-spring-security</module>
         <module>learn-shiro-jwt</module>
         <module>learn-redis-api-idempotency</module>
+        <module>learn-transaction</module>
     </modules>
 
     <parent>

@@ -12,5 +12,6 @@
 * [spring security](https://github.com/Baker-abc/baker-learning-springboot/tree/master/learn-spring-security) spring security 权限控制
 * [learn-shiro-jwt](https://github.com/Baker-abc/baker-learning-springboot/tree/master/learn-shiro-jwt) spring shiro jwt 权限控制+登录验证
 * [learn-redis-api-idempotency](https://github.com/Baker-abc/baker-learning-springboot/tree/master/learn-redis-api-idempotency) 简单的redis + token 实现api幂等性
+* [learn-redis-api-idempotency](https://github.com/Baker-abc/baker-learning-springboot/tree/master/learn-redis-api-idempotency) 简单的redis + token 实现api幂等性
 
 
