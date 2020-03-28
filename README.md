@@ -14,5 +14,6 @@
 * [learn-redis-api-idempotency](https://github.com/Baker-abc/baker-learning-springboot/tree/master/learn-redis-api-idempotency) 简单的redis + token 实现api幂等性
 * [learn-transaction](https://github.com/Baker-abc/baker-learning-springboot/tree/master/learn-transaction) spring 事务
 * [learn-spring-redis](https://github.com/Baker-abc/baker-learning-springboot/tree/master/learn-spring-redis) spring redis 相关
+* [learn-multiple-db](https://github.com/Baker-abc/baker-learning-springboot/tree/master/learn-multiple-db) 多数据源
 
 
