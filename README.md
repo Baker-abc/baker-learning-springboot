@@ -15,5 +15,6 @@
 * [learn-transaction](https://github.com/Baker-abc/baker-learning-springboot/tree/master/learn-transaction) spring 事务
 * [learn-spring-redis](https://github.com/Baker-abc/baker-learning-springboot/tree/master/learn-spring-redis) spring redis 相关
 * [learn-multiple-db](https://github.com/Baker-abc/baker-learning-springboot/tree/master/learn-multiple-db) 多数据源
+* [learn-spring-es](https://github.com/Baker-abc/baker-learning-springboot/tree/master/learn-spring-es) es搜索
 
 
