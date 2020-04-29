@@ -1,0 +1,12 @@
+#swagger
+swagger:
+ enable: true
+
+spring:
+  data:
+    # Elasticsearch 配置项
+    # spring boot 2.2.x 之后 对应 es 6.8.6 建议restClient
+    # https://docs.spring.io/spring-data/elasticsearch/docs/4.0.0.RC1/reference/html/#reference
+    elasticsearch:
+      cluster-name: elasticsearch # 集群名
+      cluster-nodes: 127.0.0.1:9300 # 集群节点

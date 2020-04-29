@@ -33,6 +33,7 @@
         <java.version>1.8</java.version>
         <fastjson.version>1.2.47</fastjson.version>
         <httpclient.version>4.5.2</httpclient.version>
+        <swagger.version>2.6.1</swagger.version>
     </properties>
 
     <dependencies>
@@ -70,6 +71,18 @@
                 <artifactId>httpclient</artifactId>
                 <version>${httpclient.version}</version>
             </dependency>
+            <!-- 文档工具swagger2 开始-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <!-- 文档工具swagger2 结束-->
         </dependencies>
     </dependencyManagement>
 
