@@ -10,6 +10,9 @@ import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @description
  * @date 2020/4/28 15:14
@@ -32,14 +35,19 @@ public class UserService {
         // 执行查询
         UserAggVO vo = elasticsearchTemplate.query(nativeSearchQueryBuilder.build(), response -> {
             UserAggVO userAggVO = new UserAggVO();
+            List<UserAggVO.AgeAgg> ageAggList = new ArrayList<>();
             // categoryIds 聚合
             Aggregation categoryIdsAggregation = response.getAggregations().get("groupByAge");
             if (categoryIdsAggregation != null) {
                 for (LongTerms.Bucket bucket : (((LongTerms) categoryIdsAggregation).getBuckets())) {
-                    userAggVO.setAge(Integer.valueOf(bucket.getKey().toString()));
-                    userAggVO.setCount(bucket.getKeyAsNumber().intValue());
+                    UserAggVO.AgeAgg ageAgg = new UserAggVO.AgeAgg();
+                    ageAgg.setAge(Integer.valueOf(bucket.getKey().toString()));
+                    ageAgg.setCount(Integer.valueOf(String.valueOf(bucket.getDocCount())));
+                    ageAggList.add(ageAgg);
+
                 }
             }
+            userAggVO.setAgeAggList(ageAggList);
             // 返回结果
             return userAggVO;
         });
