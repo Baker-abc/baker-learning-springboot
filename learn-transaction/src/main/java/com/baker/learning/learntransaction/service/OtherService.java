@@ -20,7 +20,7 @@ public class OtherService {
         user.setName("b");
         userMapper.insertSelective(user);
         if (haveException) {
-            throw new RuntimeException("OtherService method1 save 抛异常了");
+            throw new RuntimeException("OtherService method1 save1 抛异常了");
         }
     }
 }

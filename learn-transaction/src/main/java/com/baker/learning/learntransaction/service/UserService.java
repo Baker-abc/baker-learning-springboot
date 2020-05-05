@@ -16,14 +16,13 @@ public class UserService {
     @Autowired
     private OtherService otherService;
 
-    @Transactional(propagation = Propagation.REQUIRED)
-    public void save(boolean haveException) {
-
-        otherService.method1(haveException);
-
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public void save1(boolean haveException) {
         User user = new User();
         user.setName("a");
         userMapper.insertSelective(user);
+
+        otherService.method1(haveException);
     }
 
 }
