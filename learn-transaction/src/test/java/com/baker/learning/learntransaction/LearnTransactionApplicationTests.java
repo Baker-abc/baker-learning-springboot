@@ -39,7 +39,7 @@ public class LearnTransactionApplicationTests {
      */
     @Test
     public void testTransaction1() {
-        userService.save1(true);
+        userService.save1(false);
     }
 
 

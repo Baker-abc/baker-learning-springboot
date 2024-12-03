@@ -9,9 +9,9 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <!--<modules>-->
+    <modules>
     <!--<module>learn-springretry</module>-->
-    <!--<module>learn-springaop</module>-->
+<!--    <module>learn-springaop</module>-->
     <!--<module>learn-resourceloader</module>-->
     <!--<module>learn-globalexception</module>-->
     <!--<module>learn-custom-annotation</module>-->
@@ -19,8 +19,8 @@
     <!--<module>learn-spring-security</module>-->
     <!--<module>learn-shiro-jwt</module>-->
     <!--<module>learn-redis-api-idempotency</module>-->
-    <!--<module>learn-transaction</module>-->
-    <!--</modules>-->
+    <module>learn-transaction</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
